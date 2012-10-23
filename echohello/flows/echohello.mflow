@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="echohello">
-    <flow SubFlow="false" name="echohelloFlow1" entity-id="ce43bdcc-caa0-4e81-86ba-e324abf8cfc8">
-        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="10bea8e9-2171-413d-b6db-df408d4df4d2">
-            <endpoint message-exchange-pattern="RequestResponse" direction="Inbound" type="http://www.mulesoft.org/schema/mule/https/endpoint" name="HTTP" entity-id="f8780734-dd53-4897-b3cd-1d849a03dd58">
+    <flow SubFlow="false" name="echohelloFlow1" entity-id="768d5d44-090d-4289-82bb-8ade55a21775">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="1" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="1" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#1">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#1">
                 <properties>
+                    <property value="one-way" name="exchange-pattern"/>
                     <property value="request-response" name="exchange-pattern"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="8081" name="port"/>
+                    <property name="path"/>
+                    <property name="method"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
+                    <property value="2" name="auxiliary;index"/>
                 </properties>
             </endpoint>
-            <pattern type="http://www.mulesoft.org/schema/mule/core/echo-component" name="Echo" entity-id="fe2400e4-2490-4fc1-909a-b7996c2c8e32"/>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/logger" name="Logger" entity-id="01c5b883-8694-4539-9412-b12fb32d34f2">
+                <properties>
+                    <property value="somelog" name="message"/>
+                    <property value="" name="category"/>
+                    <property value="INFO" name="level"/>
+                    <property name="updated"/>
+                </properties>
+                <description></description>
+            </pattern>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#1">
+                <properties>
+                    <property value="3" name="auxiliary;index"/>
+                    <property value="3" name="auxiliary;index"/>
+                    <property value="3" name="auxiliary;index"/>
+                    <property value="3" name="auxiliary;index"/>
+                </properties>
+            </pattern>
         </lane>
     </flow>
     <description></description>

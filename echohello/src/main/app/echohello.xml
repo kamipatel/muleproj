@@ -6,6 +6,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd ">
     <flow name="echohelloFlow1" doc:name="echohelloFlow1">
         <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" doc:name="HTTP"/>
+        <logger message="somelog" level="INFO" doc:name="Logger"/>
         <echo-component doc:name="Echo"/>
     </flow>
 </mule>
