@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="myecho">
+    <flow SubFlow="false" name="myechoFlow1" entity-id="ec71dfd7-473d-4d91-bda4-fa1b7c67cae4">
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="05b1ff34-8be2-44ac-b540-d22e5c0e577e">
+            <endpoint message-exchange-pattern="RequestResponse" direction="Inbound" type="http://www.mulesoft.org/schema/mule/https/endpoint" name="HTTP" entity-id="3cf98eb5-eb03-4a78-80d7-08319c285a77">
+                <properties>
+                    <property value="request-response" name="exchange-pattern"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/echo-component" name="Echo" entity-id="07231a49-ab96-45cc-883c-138137d2f2ed"/>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>
